@@ -1,0 +1,195 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+    line-height: 1.5;
+    padding: 40px 20px;
+}
+
+.page { max-width: 1100px; margin: 0 auto; }
+
+/* ===== Компонент news.list ===== */
+.news-list {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.news-list__header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #eaecef;
+}
+
+.news-list__title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* ===== Сетка-плитка ===== */
+.news-list__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+/* ===== Одна новость: дата слева + контент справа ===== */
+.news-item {
+    display: flex;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #eaecef;
+    border-radius: 10px;
+    padding: 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+    border-color: #c9d4e4;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Левая колонка с датой */
+.news-item__date-col {
+    flex: 0 0 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2px;
+}
+
+.news-item__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f5f7;
+    border-radius: 8px;
+    padding: 8px 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.news-item__date-day {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.news-item__date-month {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8a94a6;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.news-item__date-year {
+    font-size: 10px;
+    color: #aab2bf;
+    margin-top: 2px;
+}
+
+/* Правая колонка с контентом */
+.news-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.news-item__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #eceff3;
+    margin-bottom: 12px;
+}
+
+.news-item__image-link { display: block; width: 100%; height: 100%; }
+
+.news-item__img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.news-item:hover .news-item__img { transform: scale(1.05); }
+
+.news-item__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.news-item__title-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.news-item__title-link:hover { color: #0066cc; }
+
+.news-item__preview-text {
+    font-size: 13px;
+    color: #5a6472;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.news-item__more {
+    align-self: flex-start;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.news-item__more:hover { border-bottom-color: #0066cc; }
+
+/* ===== Пагинация ===== */
+.news-list__pagination {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+.pagination__item,
+.pagination__next {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 38px; height: 38px; padding: 0 12px;
+    border-radius: 8px; background: #f4f5f7; color: #2a2a2a;
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pagination__item:hover,
+.pagination__next:hover { background: #e4e7ec; }
+
+.pagination__item.is-active { background: #0066cc; color: #fff; }
+
+.news-list__empty {
+    display: none; text-align: center; padding: 40px 20px;
+    color: #8a94a6; font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .news-list { padding: 20px; }
+    .news-list__title { font-size: 22px; }
+    .news-list__items { grid-template-columns: 1fr; }
+    .news-item__date-col { flex: 0 0 56px; }
+}
