@@ -3851,10 +3851,10 @@ h6 {
     transition: border 0.3s;
     outline: none;
 }
-.input__input.invalid {
+.inputtext.invalid {
     border: 1px solid #eb5757;
 }
-.input__input.invalid + .input__notification {
+.form-errors > .input__notification {
     opacity: 1;
     visibility: visible;
 }
@@ -3876,7 +3876,7 @@ h6 {
     position: absolute;
     bottom: 0;
     left: 0;
-    font-size: 14px;
+    font-size: 12px;
     color: #eb5757;
     transform: translateY(130%);
     opacity: 0;

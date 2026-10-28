@@ -4,19 +4,24 @@
         <div class="contact-form__head-title"><?= $arResult['arForm']['NAME']; ?></div>
         <div class="contact-form__head-text"><?= $arResult['arForm']['DESCRIPTION']; ?></div>
     </div>
-    <?php if ($arResult["isFormErrors"] === "Y"): ?>
-        <div class="form-errors">
-            <?= $arResult["FORM_ERRORS"] ?>
-        </div>
-    <?php endif; ?>
     <?= $arResult['FORM_HEADER'] ?>
     <div class="contact-form__form-inputs">
         <? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
             <?php if($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] === 'textarea') continue; ?>
+            <?php
+                if ($arResult["isFormErrors"] === "Y" && isset($arResult["FORM_ERRORS"][$FIELD_SID])){
+                    $inputNotification = $arResult["FORM_ERRORS"][$FIELD_SID];
+                }
+            ?>
             <div class="input contact-form__input">
                 <label class="input__label" for="medicine_name">
                     <div class="input__label-text"><?=$arQuestion['CAPTION']?>*</div>
                     <?= $arQuestion["HTML_CODE"]; ?>
+                    <?php if (isset($inputNotification)): ?>
+                    <div class="form-errors">
+                        <div class="input__notification"><?= $inputNotification; ?></div>
+                    </div>
+                    <?php endif; ?>
                 </label>
             </div>
         <?endforeach;?>
