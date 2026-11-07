@@ -74,9 +74,9 @@ img {
 @font-face {
   font-family: Gilroy;
   src:
-          url(/fonts/Gilroy-Bold.woff2) format("woff2"),
-          url(/fonts/Gilroy-Bold.woff) format("woff"),
-          url(/fonts/Gilroy-Bold.ttf) format("truetype");
+          url(/../../fonts/Gilroy-Bold.woff2) format("woff2"),
+          url(/../../fonts/Gilroy-Bold.woff) format("woff"),
+          url(/../../fonts/Gilroy-Bold.ttf) format("truetype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -84,9 +84,9 @@ img {
 @font-face {
   font-family: Gilroy;
   src:
-          url(/fonts/Gilroy-Extrabold.woff2) format("woff2"),
-          url(/fonts/Gilroy-Extrabold.woff) format("woff"),
-          url(/fonts/Gilroy-Extrabold.ttf) format("truetype");
+          url(/../../fonts/Gilroy-Extrabold.woff2) format("woff2"),
+          url(/../../fonts/Gilroy-Extrabold.woff) format("woff"),
+          url(/../../fonts/Gilroy-Extrabold.ttf) format("truetype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -94,9 +94,9 @@ img {
 @font-face {
   font-family: Gilroy;
   src:
-          url(/fonts/Gilroy-Medium.woff2) format("woff2"),
-          url(/fonts/Gilroy-Medium.woff) format("woff"),
-          url(/fonts/Gilroy-Medium.ttf) format("truetype");
+          url(/../../fonts/Gilroy-Medium.woff2) format("woff2"),
+          url(/../../fonts/Gilroy-Medium.woff) format("woff"),
+          url(/../../fonts/Gilroy-Medium.ttf) format("truetype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -104,9 +104,9 @@ img {
 @font-face {
   font-family: Gilroy;
   src:
-          url(/fonts/Gilroy-Regular.woff2) format("woff2"),
-          url(/fonts/Gilroy-Regular.woff) format("woff"),
-          url(/fonts/Gilroy-Regular.ttf) format("truetype");
+          url(/../../fonts/Gilroy-Regular.woff2) format("woff2"),
+          url(/../../fonts/Gilroy-Regular.woff) format("woff"),
+          url(/../../fonts/Gilroy-Regular.ttf) format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -114,9 +114,9 @@ img {
 @font-face {
   font-family: Gilroy;
   src:
-          url(/fonts/Gilroy-Light.woff2) format("woff2"),
-          url(/fonts/Gilroy-Light.woff) format("woff"),
-          url(/fonts/Gilroy-Light.ttf) format("truetype");
+          url(/../../fonts/Gilroy-Light.woff2) format("woff2"),
+          url(/../../fonts/Gilroy-Light.woff) format("woff"),
+          url(/../../fonts/Gilroy-Light.ttf) format("truetype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -124,9 +124,9 @@ img {
 @font-face {
   font-family: Gotham Pro;
   src:
-          url(/fonts/GothamPro.woff2) format("woff2"),
-          url(/fonts/GothamPro.woff) format("woff"),
-          url(/fonts/GothamPro.ttf) format("truetype");
+          url(/../../fonts/GothamPro.woff2) format("woff2"),
+          url(/../../fonts/GothamPro.woff) format("woff"),
+          url(/../../fonts/GothamPro.ttf) format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -253,6 +253,9 @@ body::-webkit-scrollbar {
   justify-content: flex-start;
   align-items: stretch;
   flex: 0 0 100%;
+}
+.section__title {
+  color: var(--bs-primary);
 }
 .article-item__title {
   position: relative;
