@@ -32,7 +32,7 @@ class Iblock
 
         // Имя инфоблока -> Имя раздела(от родителя к ребенку)... -> Имя элемента.
         $sectionId = (int)$element['IBLOCK_SECTION_ID'];
-        $sections = Helpers::getSections($iblockId, $sectionId);
+        $sections = Helpers::getSections($sectionId);
         $description = $iblock['NAME'];
         foreach ($sections as $section) {
             $description .= ' -> ' . $section;
@@ -57,7 +57,6 @@ class Iblock
                 'NAME' => $logData['SectionName'],
                 'ACTIVE' => 'Y',
             ]);
-            $sectionId = Helpers::getSectionId($logBlockId, $logData['SectionName']);
         }
 
         // Логирование

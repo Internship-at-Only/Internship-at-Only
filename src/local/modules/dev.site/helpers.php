@@ -7,22 +7,15 @@ use CIBlockSection;
 
 class Helpers
 {
-    public static function getSections($iblockId, $sectionId) : array
+    public static function getSections(int $sectionId) : array
     {
         $sections = [];
 
-        if ($sectionId > 0) {
-            $rsSections = CIBlockSection::GetNavChain(
-                $iblockId,
-                $sectionId,
-                ['ID', 'NAME']
-            );
-
-            while ($section = $rsSections->Fetch()) {
-                $sections[] = $section['NAME'];
-            }
-        }
-
+        if ($sectionId === 0) return $sections;
+        $parentSection = CIBlockSection::GetByID($sectionId)->Fetch();
+        $parentSectionId = (int)$parentSection['IBLOCK_SECTION_ID'];
+        $sections = Helpers::getSections($parentSectionId);
+        $sections[] = $parentSection['NAME'];
         return $sections;
     }
 
