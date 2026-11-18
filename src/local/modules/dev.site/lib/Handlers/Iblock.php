@@ -49,7 +49,7 @@ class Iblock
 
         // Сектор
         $sectionId = Helpers::getSectionId($logBlockId, $logData['SectionName']);
-        if (!$section)
+        if ($sectionId === 0)
         {
             $sectionObject = new CIBlockSection();
             $sectionId = $sectionObject->Add([

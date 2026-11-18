@@ -1,4 +1,4 @@
-<?
+<?php
 
 class dev_site extends CModule
 {
@@ -32,6 +32,13 @@ class dev_site extends CModule
     public function DoInstall()
     {
         RegisterModule($this->MODULE_ID);
+
+        CAgent::AddAgent(
+            '\Dev\Site\Agents\Iblock::clearOldLogs();',
+            $this->MODULE_ID,
+            'Y',
+            3600
+        );
 
         $this->InstallFiles();
     }

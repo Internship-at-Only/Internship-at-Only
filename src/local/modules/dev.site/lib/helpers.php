@@ -19,14 +19,14 @@ class Helpers
         return $sections;
     }
 
-    public static function getIblockId(string $code) : int
+    public static function getIblockId(string $code): int
     {
         $iblock = CIBlock::GetList(
             [],
             ['=CODE' => $code]
         )->Fetch();
 
-        return $iblock['ID'];
+        return $iblock ? (int)$iblock['ID'] : 0;
     }
 
     public static function getSectionId(int $iblockId, string $sectionName) : int
